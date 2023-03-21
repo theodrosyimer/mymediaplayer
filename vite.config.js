@@ -7,7 +7,6 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const root = resolve(__dirname)
-const assets = resolve(__dirname, 'assets')
 const outDir = resolve(__dirname, 'dist')
 const PORT = 5173
 
