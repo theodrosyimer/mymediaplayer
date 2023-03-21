@@ -610,6 +610,7 @@ input {
 #video-container {
   max-width: 100%;
   width: 90%;
+  place-items: center;
   place-self: center;
 }
 
