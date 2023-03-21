@@ -1,16 +1,16 @@
-# Chez Bella
+# MyMediaPlayer
 
 ## Context
 
 Formation Assofac DWWM 2022-2023
-> Projet de site web pour le restaurant Chez Bella.
+> Projet: créer un media player.
 
 ## Usage
 
 **Install**
 
 ```sh
-git clone https://github.com/theodrosyimer/chez-bella
+git clone https://github.com/theodrosyimer/mymediaplayer
 ```
 
 **Dev**
