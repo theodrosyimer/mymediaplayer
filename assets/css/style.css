@@ -610,6 +610,7 @@ input {
 #video-container {
   max-width: 100%;
   width: 90%;
+
   place-items: center;
   place-self: center;
 }
@@ -621,6 +622,25 @@ input {
 
 .controls {
   display: none;
+
+  place-items: center;
+
+  --grid-columns: 3;
+  /* --grid-width: 25rem; */
+}
+
+.sound-controls {
+  justify-self: start;
+}
+
+.screen-controls {
+  justify-self: end;
+}
+
+.progress {
+  grid-column: span 3;
+  /* width: 100%; */
+  /* place-self: center; */
 }
 
 /* Mobile First */
