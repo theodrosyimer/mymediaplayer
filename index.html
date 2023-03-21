@@ -16,7 +16,7 @@
 
   <body>
 
-    <figure id="video-container-grid">
+    <figure id="video-container">
       <video id="video"
              controls
              preload="metadata"
@@ -34,46 +34,51 @@
           MP4</a>
       </video>
 
+      <ul id="video-controls"
+          class="controls flex">
+        <li>
+          <button id="backward"
+                  type="button">Backward</button>
+        </li>
+        <li>
+          <button id="playpause"
+                  type="button">Play/Pause</button>
+        </li>
+        <li>
+          <button id="forward"
+                  type="button">Forward</button>
+        </li>
+        <li class="progress">
+          <progress id="progress"
+                    value="0"
+                    min="0">
+            <span id="progress-bar"></span>
+          </progress>
+        </li>
+        <li>
+          <button id="mute"
+                  type="button">Mute/Unmute</button>
+        </li>
+        <li>
+          <button id="volinc"
+                  type="button">Vol+</button>
+        </li>
+        <li>
+          <button id="voldec"
+                  type="button">Vol-</button>
+        </li>
+        <li>
+          <button id="fs"
+                  type="button">Fullscreen</button>
+        </li>
+      </ul>
+
       <!-- <figcaption>
         &copy; Blender Foundation |
         <a href="http://mango.blender.org">mango.blender.org</a>
       </figcaption> -->
-    </figure>
 
-    <ul id="video-controls"
-        class="controls-flex">
-      <li>
-        <button id="playpause"
-                type="button">Play/Pause</button>
-      </li>
-      <li>
-        <button id="stop"
-                type="button">Stop</button>
-      </li>
-      <li class="progress">
-        <progress id="progress"
-                  value="0"
-                  min="0">
-          <span id="progress-bar"></span>
-        </progress>
-      </li>
-      <li>
-        <button id="mute"
-                type="button">Mute/Unmute</button>
-      </li>
-      <li>
-        <button id="volinc"
-                type="button">Vol+</button>
-      </li>
-      <li>
-        <button id="voldec"
-                type="button">Vol-</button>
-      </li>
-      <li>
-        <button id="fs"
-                type="button">Fullscreen</button>
-      </li>
-    </ul>
+    </figure>
 
   </body>
 

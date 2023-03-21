@@ -607,7 +607,7 @@ input {
 /* *                   Media Player                       */
 /* ****************************************************** */
 
-#video-container-grid {
+#video-container {
   max-width: 100%;
   width: 90%;
   place-self: center;
@@ -618,7 +618,7 @@ input {
   aspect-ratio: 16 / 9;
 }
 
-.controls-flex {
+.controls {
   display: none;
 }
 
