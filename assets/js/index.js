@@ -44,6 +44,7 @@ if (supportsVideo) {
   backward.addEventListener('click', () => {
     video.currentTime = video.currentTime - NAVIGATION_TIME
   })
+
   forward.addEventListener('click', () => {
     video.currentTime = video.currentTime + NAVIGATION_TIME
   })
