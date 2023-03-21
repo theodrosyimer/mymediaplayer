@@ -1,0 +1,23 @@
+{
+  "name": "mymediaplayer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "install:latest": "ncu -u && pnpm install",
+    "vercel:setup": "vercel --local-config ./vercel.json",
+    "vercel:git": "vercel git connect",
+    "vercel": "npm run vercel:setup && npm run vercel:git"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.21",
+    "postcss-preset-env": "^8.0.1",
+    "vite": "^4.2.1"
+  },
+  "dependencies": {
+    "@types/node": "^18.15.5"
+  }
+}
