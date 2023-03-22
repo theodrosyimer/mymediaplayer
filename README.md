@@ -3,7 +3,7 @@
 ## Context
 
 Formation Assofac DWWM 2022-2023
-> Projet: créer un media player.
+> Projet: créer un [media player](https://mymediaplayer-theodrosyimer.vercel.app)
 
 ## Usage
 
