@@ -608,25 +608,25 @@ input {
 /* ****************************************************** */
 
 #video-container {
+  --video-player-width: 50%;
+
   max-width: 100%;
-  width: 90%;
+  width: var(--video-player-width);
 
   place-items: center;
   place-self: center;
 }
 
 #video {
-  width: 180%;
+  width: 100%;
   aspect-ratio: 16 / 9;
 }
 
 .controls {
   display: none;
 
-  place-items: center;
-
   --grid-columns: 3;
-  /* --grid-width: 25rem; */
+  place-items: center;
 }
 
 .sound-controls {
@@ -639,8 +639,6 @@ input {
 
 .progress {
   grid-column: span 3;
-  /* width: 100%; */
-  /* place-self: center; */
 }
 
 /* Mobile First */
