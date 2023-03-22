@@ -1,4 +1,5 @@
 import { initVideoPlayerFeatures } from './video-player-features.js'
+import { initUI } from "./init.js"
 
 const VOLUME_START = 0.5
 
@@ -7,7 +8,6 @@ const supportsVideo = !!document.createElement("video").canPlayType
 if (supportsVideo) {
   console.log('video element supported!')
 
-  const { initUI } = await import('../js/init.js')
   initUI()
 
   const video = document.querySelector("#video")
