@@ -1,13 +1,13 @@
-export function batch(input, oneOrMoreFunction) {
-  let fns = oneOrMoreFunction
+function batch(input, action) {
+  let items = input
 
-  if (!Array.isArray(oneOrMoreFunction)) {
-    fns = [oneOrMoreFunction]
+  if (!Array.isArray(input)) {
+    items = [input]
   }
 
-  fns.forEach((fn) => fn(input))
+  items.forEach((item) => action(item))
 }
 
-export function createBatchFunction(input, oneOrMoreFunction) {
-  return () => batch(input, oneOrMoreFunction)
+export function createBatchFn(input, action) {
+  return () => batch(input, action)
 }

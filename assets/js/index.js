@@ -1,9 +1,13 @@
 const NAVIGATION_TIME = 3
 const VOLUME_RATIO = 0.1
+const VOLUME_START = 0.5
 
 const supportsVideo = !!document.createElement("video").canPlayType
+
 if (supportsVideo) {
   console.log('video element supported!')
+
+  const { createBatchFn } = await import('../js/utils.js')
 
   const videoContainer = document.querySelector("#video-container")
   const video = document.querySelector("#video")
@@ -12,57 +16,88 @@ if (supportsVideo) {
   // Hide the default controls
   video.controls = false
 
+  // Start Volume
+  video.volume = VOLUME_START
+
   // Display the user defined video controls
   videoControls.style.display = "grid"
 
-  const playpause = document.querySelector("#playpause")
-  const backward = document.querySelector("#backward")
-  const forward = document.querySelector("#forward")
-  const volumeIncrement = document.querySelector("#volume-increment")
-  const volumeDecrement = document.querySelector("#volume-decrement")
-  const mute = document.querySelector("#mute")
-  const progress = document.querySelector("#progress")
-  const progressBar = document.querySelector("#progress-bar")
-  const fullscreen = document.querySelector("#fullscreen")
+  let features = [
+    {
+      name: 'video',
+      event: 'click',
+      element: () => document.querySelector("#video"),
+      action: () => {
+        if (video.paused || video.ended) {
+          video.play()
+        } else {
+          video.pause()
+        }
+      }
+    },
+    {
+      name: 'playpause',
+      event: 'click',
+      element: () => document.querySelector("#playpause"),
+      action: () => {
+        if (video.paused || video.ended) {
+          video.play()
+        } else {
+          video.pause()
+        }
+      }
+    },
+    {
+      name: 'backward',
+      event: 'click',
+      element: () => document.querySelector("#backward"),
+      action: () => {
+        video.currentTime = video.currentTime - NAVIGATION_TIME
+      }
+    },
+    {
+      name: 'forward',
+      event: 'click',
+      element: () => document.querySelector("#forward"),
+      action: () => {
+        video.currentTime = video.currentTime + NAVIGATION_TIME
+      }
+    },
+    {
+      name: 'volumeIncrement',
+      event: 'click',
+      element: () => document.querySelector("#volume-increment"),
+      action: () => {
+        if (video.volume < 1) {
+          video.volume = video.volume + VOLUME_RATIO
+        }
+      }
+    },
+    {
+      name: 'volumeDecrement',
+      event: 'click',
+      element: () => document.querySelector("#volume-decrement"),
+      action: () => {
+        if (video.volume > 0.1) {
+          video.volume = video.volume - VOLUME_RATIO
+        }
+      }
+    },
+    {
+      name: 'mute',
+      event: 'click',
+      element: () => document.querySelector("#mute"),
+      action: () => {
+        video.muted = !video.muted
+      }
+    },
+  ]
 
-  video.addEventListener('click', () => {
-    if (video.paused || video.ended) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  })
+  const initVideoPlayerFeatures = createBatchFn(features, initFeature)
 
-  playpause.addEventListener('click', () => {
-    if (video.paused || video.ended) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  })
+  initVideoPlayerFeatures() // ?
+}
 
-  backward.addEventListener('click', () => {
-    video.currentTime = video.currentTime - NAVIGATION_TIME
-  })
-
-  forward.addEventListener('click', () => {
-    video.currentTime = video.currentTime + NAVIGATION_TIME
-  })
-
-  volumeIncrement.addEventListener('click', () => {
-    if (video.volume < 1) {
-      video.volume = video.volume + VOLUME_RATIO
-    }
-  })
-
-  volumeDecrement.addEventListener('click', () => {
-    if (video.volume > 0) {
-      video.volume = video.volume - VOLUME_RATIO
-    }
-  })
-
-  mute.addEventListener('click', () => {
-    video.muted = !video.muted
-  })
-
+function initFeature({ element, event, action }) {
+  element().addEventListener(event, action)
 }
