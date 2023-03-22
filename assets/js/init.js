@@ -6,7 +6,7 @@ const video = createElement({
     id: 'video',
     controls: '',
     preload: 'metadata',
-    poster: 'assets/videos/how-to-google-it-like-a-senior-developer/poster.png',
+    // poster: 'assets/videos/how-to-google-it-like-a-senior-developer/poster.png',
   }
 })
 
