@@ -162,6 +162,7 @@ const spanProgressBar = createElement({
 
 export function initUI() {
   const videoContainer = document.querySelector("#video-container")
+
   appendChildren(videoContainer, [video, videoControls])
   appendChildren(video, [source, videoLink])
   appendChildren(videoControls, [soundControls, mainControls, screenControls, progress])

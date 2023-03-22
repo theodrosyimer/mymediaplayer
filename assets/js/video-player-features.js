@@ -126,18 +126,14 @@ function initFeature({ element, event, action }) {
   element().addEventListener(event, action)
 }
 
-
-// Set the video container's fullscreen state
 function setFullscreenData(state) {
   videoContainer.setAttribute('data-fullscreen', !!state)
 }
 
-// Checks if the document is currently in fullscreen mode
 function isFullScreen() {
   return !!(document.fullScreen || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement)
 }
 
-// Fullscreen
 function handleFullscreen() {
   // If fullscreen mode is active...
   if (isFullScreen()) {

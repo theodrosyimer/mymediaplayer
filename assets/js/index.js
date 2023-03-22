@@ -8,6 +8,7 @@ const supportsVideo = !!document.createElement("video").canPlayType
 if (supportsVideo) {
   console.log('video element supported!')
 
+  // const { initUI } = await import('../js/init.js')
   initUI()
 
   const video = document.querySelector("#video")
@@ -23,14 +24,12 @@ if (supportsVideo) {
   // Display the user defined video controls
   videoControls.style.display = "grid"
 
-
   // Check if the browser supports the Fullscreen API
   const fullScreenEnabled = !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled || document.webkitSupportsFullscreen || document.webkitFullscreenEnabled || document.createElement('video').webkitRequestFullScreen)
 
   if (!document?.fullscreenEnabled) {
     fullscreen.style.display = "none"
   }
-
 
   initVideoPlayerFeatures()
 }
