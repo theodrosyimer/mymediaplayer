@@ -6,7 +6,7 @@ const video = createElement({
     id: 'video',
     controls: '',
     preload: 'metadata',
-    // poster: 'assets/videos/how-to-google-it-like-a-senior-developer/poster.png',
+    poster: 'assets/videos/how-to-google-it-like-a-senior-developer/poster.png',
   }
 })
 
@@ -14,7 +14,7 @@ const source = createElement({
   tag: 'source',
   options: {
     type: 'video/mp4',
-    src: 'assets/videos/how-to-google-it-like-a-senior-developer/how-to-google-it-like-a-senior-developer.mp4'
+    src: 'https://www.youtube.com/watch?v=cEBkvm0-rg0'
   }
 })
 
@@ -22,7 +22,7 @@ const videoLink = createElement({
   tag: 'a',
   options: {
     text: 'Download MP4',
-    href: 'https://www.youtube.com/watch?v=cEBkvm0-rg0',
+    href: 'assets/videos/how-to-google-it-like-a-senior-developer/how-to-google-it-like-a-senior-developer.mp4',
   }
 })
 
@@ -162,7 +162,6 @@ const spanProgressBar = createElement({
 
 export function initUI() {
   const videoContainer = document.querySelector("#video-container")
-
   appendChildren(videoContainer, [video, videoControls])
   appendChildren(video, [source, videoLink])
   appendChildren(videoControls, [soundControls, mainControls, screenControls, progress])
