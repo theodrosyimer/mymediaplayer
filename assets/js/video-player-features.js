@@ -24,6 +24,7 @@ let features = [
     action: () => {
       if (!document.querySelector("#progress").getAttribute("max"))
         document.querySelector("#progress").setAttribute("max", video.duration)
+
       document.querySelector("#progress").value = video.currentTime
       document.querySelector("#progress-bar").style.width = `${Math.floor(
         (video.currentTime * 100) / video.duration

@@ -23,6 +23,7 @@ export function batchCreateElement(elements, createElement) {
 export const createElement = ({ tag, options = {} }) => {
   const element = document.createElement(tag)
   Object.entries(options).forEach(([key, value]) => {
+
     if (key === 'class') {
       if (Array.isArray(value)) {
         element.classList.add(...value)
@@ -35,13 +36,16 @@ export const createElement = ({ tag, options = {} }) => {
         element.dataset[dataKey] = dataValue
       })
     }
+
     if (key === 'text') {
       element.textContent = value
     }
+
     if (!['class', 'text', 'dataset'].includes(key)) {
       element.setAttribute(key, value)
     }
   })
+
   return element
 }
 

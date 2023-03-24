@@ -22,7 +22,7 @@ const videoLink = createElement({
   tag: 'a',
   options: {
     text: 'Download MP4',
-    href: 'assets/videos/how-to-google-it-like-a-senior-developer/how-to-google-it-like-a-senior-developer.mp4',
+    href: 'https://www.youtube.com/watch?v=cEBkvm0-rg0',
   }
 })
 
